@@ -14,6 +14,7 @@ import os
 from datetime import timedelta
 from pathlib import Path
 import dj_database_url # type: ignore
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -36,13 +37,12 @@ if RENDER_EXTERNAL_HOSTNAME:
     ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
 
 
-
 # Application definition
 
 SITE_ID = 1
 
 INSTALLED_APPS = [
-  "django.contrib.admin",
+    "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
@@ -78,7 +78,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'allauth.account.middleware.AccountMiddleware',
-    'djangorestframework_camel_case.middleware.CamelCaseMiddleWare',
+    'djangorestframework_camel_case.middleware.CamelCaseMiddleWare',   
 ]
 
 ROOT_URLCONF = "web_app_psico_2024_backend.urls"
@@ -106,8 +106,8 @@ WSGI_APPLICATION = "web_app_psico_2024_backend.wsgi.application"
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    "default": 
-       dj_database_url.config(
+    'default': 
+        dj_database_url.config(
             default= 'sqlite:///bd.sqlite3',      
             conn_max_age=600    )
 }
